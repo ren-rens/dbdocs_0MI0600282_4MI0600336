@@ -1,0 +1,211 @@
+:root {
+    --bg-main: #fdfbf7;
+    --bg-input: #ffffff;
+    --text-main: #334155;
+    --text-heading: #0f172a;
+    --text-muted: #64748b;
+    --accent: #059669;
+    --accent-hover: #047857;
+    --border-color: #e2e8f0;
+    --border-input: #cbd5e1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.app-wrapper {
+    width: 100%;
+    max-width: 480px;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.db-symbol {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+
+.app-header h1 {
+    color: var(--text-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.content-section {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.content-section h2 {
+    color: var(--text-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-heading);
+    font-size: 0.9rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem 0;
+    border: none;
+    border-bottom: 2px solid var(--border-input);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: border-color 0.2s;
+    background: transparent;
+    border-radius: 0;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent);
+}
+
+textarea {
+    border: 2px solid var(--border-input);
+    padding: 0.75rem;
+    height: 180px;
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    background: var(--bg-input);
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.field-hint {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.auth-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover { background-color: var(--accent-hover); }
+
+.btn-full {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--border-input);
+}
+
+.btn-secondary:hover { border-color: var(--text-heading); color: var(--text-heading); }
+
+.btn-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--text-muted);
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.btn-link:hover { color: var(--accent); }
+
+.ui-message {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.ui-error { background-color: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+.hidden { display: none !important; }
+
+#resultArea {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#resultArea h3 {
+    color: var(--text-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-success {
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.btn-success:hover { background-color: var(--accent-hover); }
