@@ -8,4 +8,14 @@ try {
 } catch (PDOException $e) {
     die(json_encode(['success' => false, 'message' => 'Error while connecting to database.']));
 }
+
+try {
+    $pdo->query("SELECT 1 FROM users LIMIT 1");
+} catch (PDOException $e) {
+    $sqlFilePath = __DIR__ . '/../database.sql';
+    if (file_exists($sqlFilePath)) {
+        $sql = file_get_contents($sqlFilePath);
+        $pdo->exec($sql);
+    }
+}
 ?>

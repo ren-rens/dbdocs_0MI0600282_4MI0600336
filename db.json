@@ -1,0 +1,76 @@
+{
+    "tables": [
+        {
+            "name": "users",
+            "description": "Stores user accounts for students and teachers.",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INT AUTO_INCREMENT",
+                    "note": "Unique identifier for the user",
+                    "constraints": ["PK"]
+                },
+                {
+                    "name": "email",
+                    "type": "VARCHAR(255)",
+                    "note": "User's email address used for login",
+                    "constraints": ["UNIQUE"]
+                },
+                {
+                    "name": "role",
+                    "type": "ENUM('student', 'teacher')",
+                    "note": "Defines the access level of the user"
+                }
+            ]
+        },
+        {
+            "name": "courses",
+            "description": "Contains all available university courses and their respective teachers.",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INT AUTO_INCREMENT",
+                    "note": "Course identifier",
+                    "constraints": ["PK"]
+                },
+                {
+                    "name": "title",
+                    "type": "VARCHAR(150)",
+                    "note": "Official name of the course"
+                },
+                {
+                    "name": "teacher_id",
+                    "type": "INT",
+                    "note": "Reference to the teacher leading the course",
+                    "constraints": ["FK"],
+                    "references": "users"
+                }
+            ]
+        },
+        {
+            "name": "enrollments",
+            "description": "Mapping table representing which student is enrolled in which course.",
+            "columns": [
+                {
+                    "name": "student_id",
+                    "type": "INT",
+                    "note": "Reference to the enrolled student",
+                    "constraints": ["FK", "PK"],
+                    "references": "users"
+                },
+                {
+                    "name": "course_id",
+                    "type": "INT",
+                    "note": "Reference to the selected course",
+                    "constraints": ["FK", "PK"],
+                    "references": "courses"
+                },
+                {
+                    "name": "enrolled_at",
+                    "type": "TIMESTAMP",
+                    "note": "The exact date and time the student enrolled"
+                }
+            ]
+        }
+    ]
+}

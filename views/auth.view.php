@@ -7,7 +7,7 @@
     <title>Database Documentation Generator - Authentication</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="auth-body">
     <main class="app-wrapper">
         <header class="app-header">
             <img src="images/db-symbol.png" alt="" role="presentation" class="db-symbol">
@@ -39,7 +39,7 @@
             <form novalidate>
                 <div class="form-group">
                     <label for="registerEmail">Email Address</label>
-                    <input type="email" id="registerEmail" placeholder="student@fmi.bg" autocomplete="email" required>
+                    <input type="email" id="registerEmail" placeholder="you@example.com" autocomplete="email" required>
                 </div>
                 <div class="form-group">
                     <label for="registerPassword">Password</label>

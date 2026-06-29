@@ -65,7 +65,7 @@ class JavadocBuilder {
     }
 
     private function generateCustomDocs(array $tables): void {
-        $cssContent = file_get_contents(__DIR__ . '/db-style.css');
+        $cssContent = file_get_contents(__DIR__ . '/../css/db-style.css');
         file_put_contents($this->customDocsDir . '/style.css', $cssContent);
 
         if (!is_dir($this->customDocsDir . '/images')) {
